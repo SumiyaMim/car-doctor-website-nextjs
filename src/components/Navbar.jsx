@@ -32,10 +32,10 @@ export default function Navbar() {
           <Link href={"/services"}>Services</Link>
         </li>{" "}
         <li className={pathname === "/blogs" ? "text-xs md:text-sm font-semibold text-[#FF3811]" : "text-xs md:text-sm font-semibold"}>
-          <Link href={"/blogs"}>Blogs</Link>
+          <Link href={"/"}>Blogs</Link>
         </li>{" "}
         <li className={pathname === "/my-bookings" ? "text-xs md:text-sm font-semibold text-[#FF3811]" : "text-xs md:text-sm font-semibold"}>
-          <Link href={"/my-bookings"}>My Bookings</Link>
+          <Link href={"/"}>My Bookings</Link>
         </li>
       </>
     );
@@ -96,7 +96,7 @@ export default function Navbar() {
                  className="menu-sm dropdown-content mt-10 z-[1] p-4 shadow text-center bg-base-100 rounded-box w-52"
                >
                  <li>
-                   <button onClick={() => signOut()} className="text-xs lg:text-sm font-bold hover:text-[#FF3811]">Log Out</button>
+                   <button onClick={() => signOut()} className="text-xs lg:text-sm font-bold hover:text-[#FF3811]">Log out</button>
                  </li>
                </ul>
               </div> 
