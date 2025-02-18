@@ -1,10 +1,10 @@
-import About from "./components/home/About";
-import Banner from "./components/home/Banner";
-import Contact from "./components/home/Contact";
-import Features from "./components/home/Features";
-import Services from "./components/home/Services";
-import Team from "./components/home/Team";
-import Testimonial from "./components/home/Testimonial";
+import About from "./home/About";
+import Banner from "./home/Banner";
+import Contact from "./home/Contact";
+import Features from "./home/Features";
+import Services from "./home/Services";
+import Team from "./home/Team";
+import Testimonial from "./home/Testimonial";
 
 export default function Home() {
   return (

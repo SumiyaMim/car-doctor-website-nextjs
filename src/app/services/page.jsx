@@ -1,5 +1,5 @@
 import React from "react";
-import Services from "../components/home/Services";
+import Services from "../home/Services";
 
 export default async function ServicesPage() {
 
