@@ -1,9 +1,13 @@
 "use client";
 import { registerUser } from '@/app/actions/auth/registerUser';
 import Link from 'next/link'
+import { useRouter } from 'next/navigation';
 import React from 'react'
+import toast from 'react-hot-toast';
 
 export default function RegisterForm() {
+
+    const router = useRouter();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -12,6 +16,10 @@ export default function RegisterForm() {
         const email = form.email.value;
         const password = form.password.value;
         await registerUser({ name, email, password });
+        toast.success("Successfully Register");
+
+        router.push("/login");
+        form.reset();
     };
 
   return (

@@ -1,13 +1,23 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BsHandbag } from 'react-icons/bs';
 import { FiSearch } from 'react-icons/fi';
 import { usePathname } from 'next/navigation'; 
+import { signOut, useSession } from "next-auth/react";
 
 export default function Navbar() {
+
   const pathname = usePathname(); 
+  const { data: session, status } = useSession();
+  const [userName, setUserName] = useState("");
+
+  useEffect(() => {
+    if (status === "authenticated" && session?.user?.name) {
+      setUserName(session.user.name);
+    }
+  }, [session, status]);
 
   const navMenu = () => {
     return (
@@ -76,9 +86,27 @@ export default function Navbar() {
         <div className="navbar-end items-center gap-5">
             <i><BsHandbag></BsHandbag></i>
             <i><FiSearch></FiSearch></i>
-            <Link href={"/login"}>
+            {status === "authenticated" ? (
+              <div className="dropdown dropdown-end">
+               <label tabIndex={0} className="avatar">
+                 <p className="font-semibold">{userName}</p>
+               </label>
+               <ul
+                 tabIndex={0}
+                 className="menu-sm dropdown-content mt-10 z-[1] p-4 shadow text-center bg-base-100 rounded-box w-52"
+               >
+                 <li>
+                   <button onClick={() => signOut()} className="text-xs lg:text-sm font-bold hover:text-[#FF3811]">Log Out</button>
+                 </li>
+               </ul>
+              </div> 
+            ) : (
+              <Link href={"/login"}>
                 <button className="border border-[#FF3811] hover:bg-[#FF3811] hover:text-white px-4 py-2 rounded font-semibold text-[#FF3811] text-xs md:text-sm">Sign in</button>
             </Link>
+            )}
+
+           
         </div>
       </div>
     </div>

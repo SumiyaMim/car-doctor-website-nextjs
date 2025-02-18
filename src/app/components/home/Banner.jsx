@@ -12,7 +12,6 @@ export default function Banner() {
           src="/assets/images/banner/1.jpg"
           alt="Banner 1"
           layout="fill"
-          objectFit="center"
           className="rounded-md"
         />
         <div className="absolute rounded-md flex items-center h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
@@ -47,7 +46,6 @@ export default function Banner() {
           src="/assets/images/banner/2.jpg"
           alt="Banner 2"
           layout="fill"
-          objectFit="center"
           className="rounded-md"
         />
         <div className="absolute rounded-md flex items-center h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
@@ -82,7 +80,6 @@ export default function Banner() {
           src="/assets/images/banner/3.jpg"
           alt="Banner 3"
           layout="fill"
-          objectFit="center"
           className="rounded-md"
         />
         <div className="absolute rounded-md flex items-center h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
@@ -117,7 +114,6 @@ export default function Banner() {
           src="/assets/images/banner/4.jpg"
           alt="Banner 4"
           layout="fill"
-          objectFit="center"
           className="rounded-md"
         />
         <div className="absolute rounded-md flex items-center h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
