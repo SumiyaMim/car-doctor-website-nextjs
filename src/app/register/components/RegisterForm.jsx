@@ -1,5 +1,6 @@
 "use client";
 import { registerUser } from '@/app/actions/auth/registerUser';
+import SocialLogin from '@/app/login/components/SocialLogin';
 import Link from 'next/link'
 import { useRouter } from 'next/navigation';
 import React from 'react'
@@ -50,6 +51,7 @@ export default function RegisterForm() {
             </button>
           </div>
           <p className="text-center my-4 text-[#4c4c4c] text-sm">or login with</p>
+          <SocialLogin/>
         </form>
         <p className='my-4 text-[#737373] text-sm text-center'>
           Already have an account? <Link className='text-[#FF3811] font-semibold' href="/login">Login</Link>

@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { BsHandbag } from 'react-icons/bs';
 import { FiSearch } from 'react-icons/fi';
 import { usePathname } from 'next/navigation'; 
@@ -11,13 +11,6 @@ export default function Navbar() {
 
   const pathname = usePathname(); 
   const { data: session, status } = useSession();
-  const [userName, setUserName] = useState("");
-
-  useEffect(() => {
-    if (status === "authenticated" && session?.user?.name) {
-      setUserName(session.user.name);
-    }
-  }, [session, status]);
 
   const navMenu = () => {
     return (
@@ -86,14 +79,20 @@ export default function Navbar() {
             {status === "authenticated" ? (
               <div className="dropdown dropdown-end">
                <label tabIndex={0} className="avatar">
-                 <p className="font-semibold">{userName}</p>
+                 <p className="font-semibold text-sm md:text-base">{session?.user?.name}</p>
+                 {/* <Image
+                    src={session?.user?.image}
+                    width={5}
+                    height={5}
+                    alt="user"
+                  /> */}
                </label>
                <ul
                  tabIndex={0}
                  className="menu-sm dropdown-content mt-10 z-[1] p-4 shadow text-center bg-base-100 rounded-box w-52"
                >
                  <li>
-                   <button onClick={() => signOut()} className="text-xs lg:text-sm font-bold hover:text-[#FF3811]">Log out</button>
+                   <button onClick={() => signOut()} className="text-sm font-semibold hover:text-[#FF3811]">Log out</button>
                  </li>
                </ul>
               </div> 

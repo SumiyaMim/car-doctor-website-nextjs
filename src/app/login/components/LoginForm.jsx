@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import toast from 'react-hot-toast';
+import SocialLogin from './SocialLogin';
 
 export default function LoginForm() {
 
@@ -59,6 +60,8 @@ export default function LoginForm() {
               Login
             </button>
           </div>
+          <p className="text-center my-4 text-[#4c4c4c] text-sm">or login with</p>
+          <SocialLogin/>
         </form>
         <p className="my-4 text-[#737373] text-sm text-center">
           Don't have an account? <Link className="text-[#FF3811] font-semibold" href="/register">Register</Link>
