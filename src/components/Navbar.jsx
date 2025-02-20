@@ -24,8 +24,8 @@ export default function Navbar() {
         <li className={pathname === "/services" ? "text-xs md:text-sm font-semibold text-[#FF3811]" : "text-xs md:text-sm font-semibold"}>
           <Link href={"/services"}>Services</Link>
         </li>{" "}
-        <li className={pathname === "/my-bookings" ? "text-xs md:text-sm font-semibold text-[#FF3811]" : "text-xs md:text-sm font-semibold"}>
-          <Link href={"/"}>My Bookings</Link>
+        <li className={pathname === "/my-order" ? "text-xs md:text-sm font-semibold text-[#FF3811]" : "text-xs md:text-sm font-semibold"}>
+          <Link href={"/my-order"}>My Order</Link>
         </li>
       </>
     );

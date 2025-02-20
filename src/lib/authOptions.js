@@ -6,6 +6,8 @@ import dbConnect, { collectionNamesObj } from "./dbConnect";
 
 export const authOptions = {
 
+    secret: process.env.NEXTAUTH_SECRET,
+
     // Configure one or more authentication providers
     providers: [
         CredentialsProvider({

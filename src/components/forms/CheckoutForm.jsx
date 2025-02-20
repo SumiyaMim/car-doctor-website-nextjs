@@ -6,7 +6,7 @@ import toast from "react-hot-toast";
 export default function CheckoutForm({ data }) {
 
   const { data: session } = useSession();
-  console.log(session);
+  // console.log(session);
 
   const currentDate = new Date().toISOString().split('T')[0];
 
@@ -18,6 +18,8 @@ export default function CheckoutForm({ data }) {
     const name = form.name.value;
     const date = form.date.value;
     const email = form.email.value;
+    const phone = form.phone.value;
+    const address = form.address.value;
 
     const checkoutPayload = {
       // Session
@@ -26,6 +28,8 @@ export default function CheckoutForm({ data }) {
 
       // User Inputs
       date,
+      phone, 
+      address,
 
       // Extra information
       service_id: data._id,
@@ -34,18 +38,20 @@ export default function CheckoutForm({ data }) {
       service_price: data.price,
     };
 
-    console.log(checkoutPayload);
+    // console.log(checkoutPayload);
 
     const res = await fetch("http://localhost:3000/api/service", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(bookingPayload),
+      body: JSON.stringify(checkoutPayload),
     });
 
     const postedResponse = await res.json();
-    console.log("POSTED DATA", postedResponse);
+    // console.log("POSTED DATA", postedResponse);
+
+    toast("Checkout Successfully");
   };
 
   return (
@@ -103,6 +109,31 @@ export default function CheckoutForm({ data }) {
                 type="date"
                 name="date"
                 defaultValue={currentDate}
+                className="input text-sm w-full outline-none focus:outline-none"
+                required
+              />
+            </div>
+          </div>
+
+          <div className="md:flex gap-7 md:mb-4">
+            <div className="form-control md:w-1/2">
+              <label className="label">
+                <span className="label-text text-base font-semibold">Phone</span>
+              </label>
+              <input
+                type="text"
+                name="phone"
+                className="input text-sm w-full outline-none focus:outline-none"
+                required
+              />
+            </div>
+            <div className="form-control md:w-1/2">
+              <label className="label">
+                <span className="label-text text-base font-semibold">Present Address</span>
+              </label>
+              <input
+                type="text"
+                name="address"
                 className="input text-sm w-full outline-none focus:outline-none"
                 required
               />
