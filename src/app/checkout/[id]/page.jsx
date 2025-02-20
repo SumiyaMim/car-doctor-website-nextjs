@@ -9,8 +9,6 @@ export default async function CheckoutPage({ params }) {
   );
   const data = await res.json();
 
-  const { title } = data;
-
   return (
     <div className='max-w-7xl mx-auto px-6 md:px-8 lg:px-12'>
       <div className="carousel-item relative w-full">
@@ -23,7 +21,7 @@ export default async function CheckoutPage({ params }) {
       />
       <div className="absolute rounded-md flex items-center h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
         <div className="text-white space-y-7 pl-8 md:pl-12">
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-semibold">{title}</h2>
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-semibold">{data.title}</h2>
         </div>
       </div>
     </div>
