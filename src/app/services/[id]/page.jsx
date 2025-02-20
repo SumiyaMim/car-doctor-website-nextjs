@@ -1,13 +1,14 @@
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
-import dbConnect, { collectionNamesObj } from "@/lib/dbConnect";
-import { ObjectId } from "mongodb";
 
 export default async function ServiceDetailsPage({ params }) {
+
   const p = await params;
-  const serviceCollection = dbConnect(collectionNamesObj.servicesCollection);
-  const data = await serviceCollection.findOne({ _id: new ObjectId(p.id) });
+  const res = await fetch(
+    `http://localhost:3000/api/service/${p.id}`
+  );
+  const data = await res.json();
 
   return (
     <div className='max-w-7xl mx-auto px-6 md:px-8 lg:px-12'>
