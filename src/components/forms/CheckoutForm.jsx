@@ -1,5 +1,6 @@
 "use client";
 import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 import React from "react";
 import toast from "react-hot-toast";
 
@@ -7,6 +8,7 @@ export default function CheckoutForm({ data }) {
 
   const { data: session } = useSession();
   // console.log(session);
+  const router = useRouter();
 
   const currentDate = new Date().toISOString().split('T')[0];
 
@@ -52,6 +54,8 @@ export default function CheckoutForm({ data }) {
     // console.log("POSTED DATA", postedResponse);
 
     toast("Checkout Successfully");
+    form.reset(); 
+    router.push("/my-order"); 
   };
 
   return (

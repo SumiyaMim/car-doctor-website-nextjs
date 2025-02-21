@@ -2,6 +2,7 @@ import React from 'react'
 import Link from "next/link";
 import Image from "next/image";
 import { FaRegEdit } from "react-icons/fa";
+import DeleteCheckout from '@/app/my-order/components/DeleteCheckout';
 
 export default function MyOrderTable({ data }) {
   return (
@@ -39,7 +40,7 @@ export default function MyOrderTable({ data }) {
                             </Link>
                         </td>
                         <td>
-                            {/* <DeleteBookingButton id={item._id} /> */}
+                            <DeleteCheckout id={item._id} />
                         </td>
                     </tr>
                 ))}

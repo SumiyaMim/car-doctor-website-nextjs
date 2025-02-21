@@ -1,23 +1,35 @@
-"use client";
-import { useEffect, useState } from "react";
+// "use client";
+// import { useEffect, useState } from "react";
 import React from 'react'
 import Image from "next/image";
 import MyOrderTable from '@/components/tables/MyOrderTable';
+import { headers } from 'next/headers';
 
 // Get Order for Single User
-  
-export default function MyOrderPage() {
+const fetchMyOrder = async () => {
+  const res = await fetch("http://localhost:3000/api/service", 
+  {
+    headers: new Headers(await headers()),
+  });
+  const d = await res.json();
+  // setData(d);
+  return d;
+};
 
-    const [data, setData] = useState([]);
+export default async function MyOrderPage() {
 
-    useEffect(() => {
-        const fetchMyOrder = async () => {
-            const res = await fetch("http://localhost:3000/api/service");
-            const d = await res.json();
-            setData(d);
-        };
-        fetchMyOrder()
-    }, []);
+    // const [data, setData] = useState([]);
+
+    // useEffect(() => {
+    //     const fetchMyOrder = async () => {
+    //         const res = await fetch("http://localhost:3000/api/service");
+    //         const d = await res.json();
+    //         setData(d);
+    //     };
+    //     fetchMyOrder()
+    // }, []);
+
+    const data = await fetchMyOrder()
 
   return (
     <div className='max-w-7xl mx-auto px-6 md:px-8 lg:px-12'>
