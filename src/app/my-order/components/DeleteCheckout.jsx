@@ -1,6 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { MdDelete } from "react-icons/md";
+import toast from "react-hot-toast";
 
 export default function DeleteCheckout({ id }) {
 
@@ -14,6 +15,7 @@ export default function DeleteCheckout({ id }) {
     );
     const data = await res.json();
     // console.log(data);
+    toast("Delete Successfully");
     router.refresh();
   };
 
