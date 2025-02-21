@@ -13,7 +13,7 @@ export default function DeleteCheckout({ id }) {
       }
     );
     const data = await res.json();
-    console.log(data);
+    // console.log(data);
     router.refresh();
   };
 

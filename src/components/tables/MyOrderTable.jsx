@@ -35,7 +35,7 @@ export default function MyOrderTable({ data }) {
                         <td className="font-semibold text-xs lg:text-sm">{item.phone}</td>
                         <td className="font-semibold text-xs lg:text-sm">{item.address}</td>
                         <td>
-                            <Link href={`/my-bookings/${item._id}`}>
+                            <Link href={`/my-order/${item._id}`}>
                             <FaRegEdit className="h-6 w-6 font-bold" />
                             </Link>
                         </td>
