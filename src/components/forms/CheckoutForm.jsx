@@ -42,6 +42,7 @@ export default function CheckoutForm({ data }) {
 
     // console.log(checkoutPayload);
 
+    // send order to server
     const res = await fetch("http://localhost:3000/api/service", {
       method: "POST",
       headers: {

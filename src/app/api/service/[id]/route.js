@@ -21,7 +21,7 @@ export const DELETE = async (req, { params }) => {
     const p = await params;
     const query = { _id: new ObjectId(p.id) }
 
-    // validation
+    // Validation
     const session = await getServerSession(authOptions)
     const currentOrder = await checkoutCollection.findOne(query)
 
