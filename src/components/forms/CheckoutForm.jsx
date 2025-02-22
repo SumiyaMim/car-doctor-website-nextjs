@@ -42,7 +42,7 @@ export default function CheckoutForm({ data }) {
     // console.log(checkoutPayload);
 
     // send order to server
-    const res = await fetch("http://localhost:3000/api/service", {
+    const res = await fetch("https://car-doctor-website-nextjs.vercel.app/api/service", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

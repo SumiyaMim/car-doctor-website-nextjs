@@ -30,7 +30,7 @@ export default function UpdateCheckoutForm({ data }) {
 
     // update order
     const res = await fetch(
-      `http://localhost:3000//api/my-order/${data._id}`,
+      `https://car-doctor-website-nextjs.vercel.app/api/my-order/${data._id}`,
       {
         method: "PATCH",
         body: JSON.stringify(checkoutPayload),

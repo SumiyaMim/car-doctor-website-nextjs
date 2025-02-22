@@ -7,7 +7,7 @@ import { headers } from 'next/headers';
 
 // Get Order for Single User
 const fetchMyOrder = async () => {
-  const res = await fetch("http://localhost:3000/api/service", 
+  const res = await fetch("https://car-doctor-website-nextjs.vercel.app/api/service", 
   {
     headers: new Headers(await headers()),
   });
@@ -22,7 +22,7 @@ export default async function MyOrderPage() {
 
     // useEffect(() => {
     //     const fetchMyOrder = async () => {
-    //         const res = await fetch("http://localhost:3000/api/service");
+    //         const res = await fetch("https://car-doctor-website-nextjs.vercel.app/api/service");
     //         const d = await res.json();
     //         setData(d);
     //     };

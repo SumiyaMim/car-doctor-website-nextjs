@@ -6,7 +6,7 @@ export default async function UpdateCheckoutPage({ params }) {
 
     const p = await params;
     const res = await fetch(
-        `http://localhost:3000//api/my-order/${p.id}`,
+        `https://car-doctor-website-nextjs.vercel.app/api/my-order/${p.id}`,
         {
         headers: new Headers(await headers()),
         }

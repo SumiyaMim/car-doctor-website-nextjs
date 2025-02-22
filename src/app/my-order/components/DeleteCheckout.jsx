@@ -8,7 +8,7 @@ export default function DeleteCheckout({ id }) {
   const router = useRouter();
   const handleDelete = async (id) => {
     const res = await fetch(
-      `http://localhost:3000/api/service/${id}`,
+      `https://car-doctor-website-nextjs.vercel.app/api/service/${id}`,
       {
         method: "DELETE",
       }
