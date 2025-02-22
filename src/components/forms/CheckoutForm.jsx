@@ -39,7 +39,6 @@ export default function CheckoutForm({ data }) {
       service_img: data.img,
       service_price: data.price,
     };
-
     // console.log(checkoutPayload);
 
     // send order to server

@@ -1,9 +1,8 @@
 import { getToken } from "next-auth/jwt"
 import { NextResponse } from "next/server"
 
-// use middleware for protected routes
+// Use middleware for protected routes
 export const middleware = async (req) => {
-
     const token = await getToken({
         req,
         secret: process.env.NEXTAUTH_SECRET,
@@ -15,7 +14,6 @@ export const middleware = async (req) => {
     } else {
         return NextResponse.redirect(new URL('/login', req.url))
     }
-
 }
 
 export const config = {

@@ -26,7 +26,6 @@ export default function UpdateCheckoutForm({ data }) {
       phone, 
       address,
     };
-
     // console.log(checkoutPayload);
 
     // update order
