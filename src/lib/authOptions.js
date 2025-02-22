@@ -17,9 +17,9 @@ export const authOptions = {
                 password: { label: "Password", type: "password" }
             },
             async authorize(credentials, req) {
-                console.log(credentials)
+                // console.log(credentials)
                 const user = await loginUser(credentials)
-                console.log(user)
+                // console.log(user)
                 if (user) {
                     return user
                 } else {
@@ -35,12 +35,12 @@ export const authOptions = {
             clientId: process.env.GITHUB_ID,
             clientSecret: process.env.GITHUB_SECRET
         })
-
-
     ],
+
     pages: {
         signIn: "/login"
     },
+    
     callbacks: {
         async signIn({ user, account, profile, email, credentials }) {
 
